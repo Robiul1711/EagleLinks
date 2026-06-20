@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronDown, User, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { BiSolidUser } from "react-icons/bi";
+import { FaUser } from "react-icons/fa";
 const navItems = [
   {
     label: "TIKTOK",
@@ -118,10 +119,23 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
-      className="sticky top-0 z-50 w-full py-4 md:py-5 border-b border-Primary/20 font-open-sans"
+      className={`fixed top-0 left-0 z-50 w-full py-4 md:py-5 border-b font-open-sans transition-all duration-300 ${
+        scrolled
+          ? "bg-[#050505]/60 backdrop-blur-xl border-Primary/20 shadow-lg shadow-black/10"
+          : "bg-transparent border-transparent"
+      }`}
     >
 
       <div className="mx-auto flex section-padding-x items-center justify-between">
@@ -149,7 +163,7 @@ export default function Navbar() {
             href="#"
             className="flex items-center gap-2 px-5 py-[7px] rounded-md border border-Primary text-white text-[13px] font-semibold tracking-wide hover:bg-Primary hover:border-Primary transition-all duration-200"
           >
-            <BiSolidUser/>
+        <FaUser />
             Login
           </Link>
         </div>

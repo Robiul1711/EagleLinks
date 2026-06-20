@@ -3,6 +3,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import SportLight from "../components/common/SportLight";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -27,7 +28,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={cn("h-full", "dark", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
-      
+      {/* <SportLight/> */}
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}

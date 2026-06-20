@@ -56,7 +56,7 @@ export default function PackageCard() {
   const [selected, setSelected] = useState(0);
 
   return (
-    <section className="bg-black py-20">
+    <section className="py-20">
       <div className="container mx-auto max-w-5xl px-4">
         {/* Package Grid */}
         <div className="grid grid-cols-2 gap-5 md:grid-cols-4">

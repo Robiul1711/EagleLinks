@@ -3,6 +3,8 @@ import p1 from '@/public/images/p1.png';
 import p2 from '@/public/images/p2.png';
 import p3 from '@/public/images/p3.png';
 import Image from 'next/image';
+import { Switch } from "@/components/ui/switch";
+import { BsInfoCircleFill } from "react-icons/bs";
 const PriceCard = () => {
   const tiers = [
     {
@@ -10,7 +12,7 @@ const PriceCard = () => {
       title: 'Premium Followers',
       image: p1,
       headerBg: 'bg-[#1e90ff]',
-      borderColor: 'border-[#1e90ff] shadow-[0_0_15px_rgba(30,144,255,0.5)]',
+      borderColor: 'border-[#1e90ff] shadow-[0_0_20px_rgba(30,144,255,0.3)]',
       textColor: 'text-[#1e90ff]',
       checkColor: 'text-[#1e90ff]',
       isSelected: true,
@@ -26,7 +28,7 @@ const PriceCard = () => {
       title: 'Active Followers',
       image: p2,
       headerBg: 'bg-[#d81b60]',
-      borderColor: 'border-transparent bg-[#171923]',
+      borderColor: 'hover:border-[#d81b60] hover:shadow-[0_0_20px_rgba(216,27,96,0.3)]',
       textColor: 'text-[#d81b60]',
       checkColor: 'text-[#d81b60]',
       isSelected: false,
@@ -43,7 +45,7 @@ const PriceCard = () => {
       title: 'VIP Followers',
       image: p3,
       headerBg: 'bg-[#10b981]',
-      borderColor: 'border-transparent bg-[#171923]',
+      borderColor: 'hover:border-[#10b981] hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]',
       textColor: 'text-[#10b981]',
       checkColor: 'text-[#10b981]',
       isSelected: false,
@@ -58,19 +60,37 @@ const PriceCard = () => {
   ]
 
   return (
-    <div className=" py-6 px-4 flex justify-center items-center">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl w-full">
+    <div className="flex justify-center items-center flex-col">
+         <div className="mb-10 mx-auto relative w-full max-w-md rounded-full p-[1px] bg-[linear-gradient(90deg,#ff007f_0%,#8b5cf6_100%)] shadow-[0_0_15px_#ff00ff90,0_0_35px_#8b5cf680]">
+            <div className="flex items-center gap-5 rounded-full bg-[#0B1325] px-4 py-1.5">
+              {/* Switch */}
+              <div className="border border-[#fff] rounded-xl p-0.5 w-[10%] flex items-center justify-center">
+                <Switch className="data-[state=checked]:bg-[#1f2a44] data-[state=unchecked]:bg-[#1f2a44] [&>span]:bg-white" />
+              </div>
+
+              {/* Label */}
+              <span className="flex-1 text-lg  text-white">
+                I need vip followers
+              </span>
+
+              {/* Info */}
+            <BsInfoCircleFill className='text-gray-200' />
+            </div>
+          </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full">
         {tiers.map((tier) => (
           <div
             key={tier.id}
-            className={`relative rounded-3xl border-2 flex flex-col overflow-hidden bg-[#12141c] ${tier.borderColor}`}
+            className={`relative rounded-3xl border-2 bg-[#0E1017] transition-all duration-300 flex flex-col overflow-hidden ${
+              tier.isSelected ? tier.borderColor : 'border-white/5 ' + tier.borderColor
+            }`}
           >
-            {/* Header section with Eagle */}
-            <div className={`px-4 pt-3 flex justify-between items-center ${tier.headerBg}`}>
-              <h3 className="text-white text-lg font-bold leading-tight max-w-[150px]">
+            {/* Header section with Character Illustration */}
+            <div className={`px-3 pt-4 flex justify-between items-center gap-3 ${tier.headerBg}`}>
+              <h3 className="text-white text-xl  font-bold leading-tight ">
                 {tier.title}
               </h3>
-              <div className="w-16 h-16 relative flex items-center justify-center">
+              <div className="w-14 h-14 relative flex items-center justify-center">
                 <Image
                   src={tier.image}
                   alt={tier.title}
@@ -79,55 +99,36 @@ const PriceCard = () => {
               </div>
             </div>
 
-            {/* Features section */}
-            <div className="p-4 flex-1 flex flex-col justify-between">
-              <ul className="space-y-3">
+            {/* Features content section */}
+            <div className="p-4 flex-1 flex flex-col justify-between gap-8">
+              <ul className="space-y-4 w-full flex flex-col items-start">
                 {tier.features.map((feature, idx) => (
-                  <li key={idx} className="flex  gap-2">
-                    {/* Dynamic checkmark color */}
+                  <li key={idx} className="flex items-start gap-3 w-full">
+                    {/* Checkmark Icon alignment fix */}
                     <svg
                       className={`w-5 h-5 mt-0.5 flex-shrink-0 ${tier.checkColor}`}
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="3"
+                      strokeWidth="3.5"
                       viewBox="0 0 24 24"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     
-                    <div className="text-gray-300 text-sm ">
-                      <span className={`
-                        ${feature.isBold ? ' text-white' : ''}
-                        ${feature.isColor ? tier.textColor + ' font-medium' : ''}
+                    <div className="text-sm tracking-wide text-gray-300">
+                      <p className={`
+                        ${feature.isBold ? 'text-white font-semibold' : ''}
+                        ${feature.isColor ? tier.textColor + ' font-bold' : ''}
                       `}>
-                        {feature.text.split(tier.textColor).map((t, i) => <React.Fragment key={i}>{t}</React.Fragment>)}
-                        {/* Special case formatting for the VIP tier text colorization */}
                         {feature.text.includes("All features") ? (
                           <>
-                            <span className={tier.textColor}>All features</span> of Active, <br/>plus:
+                            <span className={tier.textColor}>All features</span> of Active, plus:
                           </>
-                        ) : feature.text.includes("Hit the explore") ? (
-                          <>
-                            <span className="text-white">Hit the explore page</span> and grow your engagement
-                          </>
-                        ) : feature.text.includes("Targeted users") ? (
-                          <>
-                            <span className="text-white">Real followers</span> from <br/>Targeted users
-                          </>
-                        ) : feature.text.includes("Instant Delivery") ? (
-                          <>
-                            <span className="text-white">Instant Delivery</span> <br/>Guaranteed
-                          </>
-                        ) : feature.text.includes("VIP support") ? (
-                          <>
-                            <span className="text-white">VIP support</span> with <br/>lifetime access
-                          </>
-                        ) : (
-                          feature.text
-                        )}
-                      </span>
+                        ) : feature.text}
+                      </p>
+                      
                       {feature.hasLink && (
-                        <a href="#" className={`block text-sm mt-0.5 hover:underline ${tier.textColor}`}>
+                        <a href="#" className={`inline-block text-xs mt-1 hover:underline ${tier.textColor}`}>
                           {feature.linkText}
                         </a>
                       )}
@@ -136,16 +137,16 @@ const PriceCard = () => {
                 ))}
               </ul>
 
-              {/* Bottom Radio Circle Indicator */}
-              <div className="mt-8 flex justify-end">
+              {/* Bottom Custom Indicator */}
+              <div className="w-full flex justify-end items-end mt-auto">
                 {tier.isSelected ? (
-                  <div className="w-8 h-8 rounded-full bg-[#1e90ff] flex items-center justify-center shadow-lg shadow-[#1e90ff]/50">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                  <div className="w-7 h-7 rounded-full bg-[#1e90ff] flex items-center justify-center shadow-md shadow-[#1e90ff]/40">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="3.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                 ) : (
-                  <div className="w-8 h-8 rounded-full border-2 border-gray-600 bg-transparent" />
+                  <div className="w-7 h-7 rounded-full border-2 border-white/20 bg-transparent" />
                 )}
               </div>
             </div>
@@ -156,4 +157,4 @@ const PriceCard = () => {
   )
 }
 
-export default PriceCard
+export default PriceCard;
