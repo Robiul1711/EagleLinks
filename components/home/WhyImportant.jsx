@@ -4,7 +4,7 @@ import whub from "@/public/images/whybuy.png"
 import whub2 from "@/public/images/boost.png"
 const WhyImportant = () => {
   return (
-    <section className="relative overflow-hidden bg-black py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-black ">
       {/* Background Glow */}
       <div className="absolute left-0 bottom-0 h-[300px] w-[300px] bg-blue-500/10 blur-[150px]" />
       <div className="absolute right-0 top-0 h-full w-[300px] bg-blue-500/10 blur-[150px]" />
@@ -17,7 +17,7 @@ const WhyImportant = () => {
           subtitleClassName="max-w-[780px]"
         />
 
-        <div className="space-y-20">
+        <div className="space-y-16">
           {/* First Row */}
           <div className="grid items-center gap-10 lg:grid-cols-2">
             {/* Content */}

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import SportLight from "../components/common/SportLight";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
     >
       {/* <SportLight/> */}
       <body className="min-h-full flex flex-col">
+        <ScrollToTop />
         <Navbar />
         {children}
         <Footer />

@@ -24,8 +24,8 @@ export default function SocialMediaGrowth() {
   ];
 
   return (
-    <section className=" overflow-hidden">
-      <div className="">
+    <section className=" overflow-hidden section-padding-x">
+    
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           
           {/* Left Side: Interactive Mockup Showcase */}
@@ -172,7 +172,7 @@ export default function SocialMediaGrowth() {
 
           </div>
         </div>
-      </div>
+   
     </section>
   );
 }

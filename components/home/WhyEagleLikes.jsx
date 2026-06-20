@@ -47,7 +47,7 @@ const features = [
 
 const WhyEagleLikes = () => {
   return (
-    <section className="relative overflow-hidden bg-black py-24">
+    <section className="relative overflow-hidden bg-black py-16">
       {/* Blue glow */}
       <div className="absolute right-0 top-0 h-full w-[300px] bg-blue-500/10 blur-[150px]" />
 

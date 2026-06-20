@@ -61,11 +61,11 @@ const PriceCard = () => {
 
   return (
     <div className="flex justify-center items-center flex-col">
-         <div className="mb-10 mx-auto relative w-full max-w-md rounded-full p-[1px] bg-[linear-gradient(90deg,#ff007f_0%,#8b5cf6_100%)] shadow-[0_0_15px_#ff00ff90,0_0_35px_#8b5cf680]">
+         <div className="mb-10 mx-auto relative w-full max-w-sm rounded-full p-[1px] bg-[linear-gradient(90deg,#ff007f_0%,#8b5cf6_100%)] shadow-[0_0_15px_#ff00ff90,0_0_35px_#8b5cf680]">
             <div className="flex items-center gap-5 rounded-full bg-[#0B1325] px-4 py-1.5">
               {/* Switch */}
-              <div className="border border-[#fff] rounded-xl p-0.5 w-[10%] flex items-center justify-center">
-                <Switch className="data-[state=checked]:bg-[#1f2a44] data-[state=unchecked]:bg-[#1f2a44] [&>span]:bg-white" />
+              <div className="border border-[#fff] rounded-xl p-0.5 w-[12%] flex items-center justify-center">
+                <Switch className="data-[state=checked]:bg-[#1f2a44] data-[state=unchecked]:bg-[#1f2a44] [&>span]:bg-white " />
               </div>
 
               {/* Label */}

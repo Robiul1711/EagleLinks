@@ -17,11 +17,11 @@ const YourPrivacy = () => {
           subtitle="Being careful about your safety online is smart, scammers constantly look for ways to steal from unsuspecting users. You should also protect your social media accounts, as platforms have detailed rules that can be violated easily by mistake."
         />
 
-        <div className="mt-20 space-y-24">
+        <div className="mt-20 space-y-16">
           {/* Row 1 */}
           <div className="grid items-center gap-16 lg:grid-cols-2">
             {/* Content */}
-            <div className="max-w-lg">
+            <div className="max-w-2xl">
               <h2 className="text-4xl font-bold text-white lg:text-5xl">
                 Secure Payments
               </h2>
@@ -67,7 +67,7 @@ const YourPrivacy = () => {
             </div>
 
             {/* Content */}
-            <div className="order-1 max-w-lg lg:order-2">
+            <div className="order-1 max-w-2xl lg:order-2">
               <h2 className="text-4xl font-bold text-white lg:text-5xl">
                 Data Protection
               </h2>

@@ -26,8 +26,8 @@ const TrustedBy = () => {
       {/* Blue Glow */}
       <div className="absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-blue-600/10 blur-[150px]" />
 
-      <div className="container mx-auto px-4">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+      <div className="container mx-auto">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
           {/* Left Side */}
           <div>
             {/* Badge */}
@@ -56,15 +56,15 @@ const TrustedBy = () => {
               {features.map((item, index) => (
                 <div
                   key={index}
-                  className="w-[110px] rounded-[28px] border border-white/10 bg-[#0D0E12] px-4 py-6 text-center"
+                  className="w-[140px] rounded-[28px] border border-white/10 bg-[#0D0E12] px-4 py-6"
                 >
                   <div className="mb-3 text-xl">{item.icon}</div>
 
-                  <h4 className="text-3xl font-medium text-white">
+                  <h4 className="text-2xl font-medium text-white">
                     {item.title}
                   </h4>
 
-                  <p className="mt-3 text-sm leading-6 text-[#99A1AF]">
+                  <p className="mt-3  leading-6 text-[#99A1AF]">
                     {item.subtitle}
                   </p>
                 </div>
