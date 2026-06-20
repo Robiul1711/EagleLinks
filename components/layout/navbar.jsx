@@ -121,8 +121,9 @@ export default function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-50 w-full py-4 md:py-5 border-b border-Primary/50"
+      className="sticky top-0 z-50 w-full py-4 md:py-5 border-b border-Primary/20 font-open-sans"
     >
+
       <div className="mx-auto flex section-padding-x items-center justify-between">
 
         {/* Logo */}

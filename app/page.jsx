@@ -1,11 +1,32 @@
 import Banner from "@/components/home/banner";
 import FAQ from "@/components/home/faq";
 import LightRays from "../components/ui/LightRays";
+import BenefitsOfBuying from "../components/home/BenefitsOfBuying";
+import TrustedBy from "../components/home/TrustedBy";
+import YourPrivacy from "../components/home/YourPrivecy";
+import WhyImportant from "../components/home/WhyImportant";
+import HowItWorks from "../components/home/HowItWorks";
+import SocialMediaGrowth from "../components/home/SocialMediaGrowth";
+import WhyEagleLikes from "../components/home/WhyEagleLikes";
+import Brand from "../components/home/Brand";
+import PackageCard from "../components/home/PackageCard";
 
 export default function Home() {
   return (
     <main className="section-padding-x">
-  <div className="absolute top-0 left-0 w-full h-screen z-10 pointer-events-none">
+      <div
+        className="absolute right-0 top-20 h-full w-[10%] -z-10 bg-no-repeat "
+        style={{
+          backgroundImage: "url('/images/right.png')",
+        }}
+      ></div>
+      <div
+        className="absolute left-0 top-90 h-full w-[10%] -z-10 bg-no-repeat "
+        style={{
+          backgroundImage: "url('/images/left.png')",
+        }}
+      ></div>
+      <div className="absolute top-0 left-0 w-full h-screen z-10 pointer-events-none">
         <LightRays
           raysOrigin="top-center"
           raysColor="#01AAFF"
@@ -20,6 +41,15 @@ export default function Home() {
         />
       </div>
       <Banner />
+      <PackageCard/>
+      <Brand/>
+      <WhyEagleLikes/>
+    <SocialMediaGrowth/>
+      <HowItWorks/>
+      <WhyImportant/>
+      <YourPrivacy/>
+      <TrustedBy/>
+      <BenefitsOfBuying/>
       <FAQ />
     </main>
   );

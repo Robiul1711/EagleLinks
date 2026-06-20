@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, Info, Sparkles } from "lucide-react";
 import { FlipWords } from "@/components/ui/flipwords";
 import { Switch } from "@/components/ui/switch";
+import PriceCard from "./PriceCard";
 const Banner = () => {
   const [mounted, setMounted] = useState(false);
 
@@ -15,7 +16,8 @@ const Banner = () => {
   const actionKeywords = ["deploying products", "Fast Delivery!"];
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center  overflow-hidden">
+    <section className="relative w-full  flex items-center justify-center  overflow-hidden">
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
         {/* Floating Particles - Fixed logic */}
@@ -45,7 +47,7 @@ const Banner = () => {
 
       <div
         style={{ backgroundImage: "url('/images/grid.png')" }}
-        className="text-center max-w-3xl mx-auto"
+        className="text-center max-w-7xl mx-auto"
       >
         {/* Dynamic Text Section */}
         <motion.div
@@ -70,18 +72,11 @@ const Banner = () => {
             offers!
           </p>
           <div className="mt-10 mx-auto relative w-full max-w-md rounded-full p-[1px] bg-[linear-gradient(90deg,#ff007f_0%,#8b5cf6_100%)] shadow-[0_0_15px_#ff00ff90,0_0_35px_#8b5cf680]">
-            <div className="flex items-center gap-5 rounded-full bg-[#0B1325] px-4 py-3">
+            <div className="flex items-center gap-5 rounded-full bg-[#0B1325] px-4 py-1.5">
               {/* Switch */}
               <div className="border border-[#fff] rounded-xl p-0.5 w-[10%] flex items-center justify-center">
-
-              <Switch
- className="
-    data-[state=checked]:bg-[#1f2a44]
-    data-[state=unchecked]:bg-[#1f2a44]
-    [&>span]:bg-white w
-  "
-  />
-  </div>
+                <Switch className="data-[state=checked]:bg-[#1f2a44] data-[state=unchecked]:bg-[#1f2a44] [&>span]:bg-white" />
+              </div>
 
               {/* Label */}
               <span className="flex-1 text-[20px] font-medium text-white">
@@ -95,6 +90,9 @@ const Banner = () => {
             </div>
           </div>
         </motion.div>
+        <div>
+          <PriceCard/>
+        </div>
       </div>
     </section>
   );

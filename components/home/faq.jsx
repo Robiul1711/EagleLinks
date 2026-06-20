@@ -1,40 +1,77 @@
-export default function FAQ() {
-  const faqs = [
-    {
-      question: "What is this template about?",
-      answer: "It is a standard landing page skeleton with organized folder structures and pre-configured fonts.",
-    },
-    {
-      question: "How do I use the different font families?",
-      answer: "We configure Inter, Open Sans, and Rethink Sans in globals.css. You can apply them using the classes font-inter, font-open-sans, or font-rethink-sans.",
-    },
-    {
-      question: "Do I need to run additional setups?",
-      answer: "No, the files are set up cleanly within the project structure, resolving correctly under path aliases.",
-    },
-  ];
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import SectionTitle from "../common/SectionTitle";
 
+const faqs = [
+  {
+    question: "Why should I buy Instagram followers?",
+    answer:
+      "Buying Instagram followers can help establish social proof and improve your profile's credibility, making it easier to attract organic followers and engagement.",
+  },
+  {
+    question: "Can buying Instagram followers boost my organic engagement?",
+    answer:
+      "Yes, a strong follower count can increase trust and encourage more users to interact with your content naturally.",
+  },
+  {
+    question: "How quickly will I receive Instagram followers after purchase?",
+    answer:
+      "Most orders begin processing within minutes and are delivered gradually for a natural growth experience.",
+  },
+  {
+    question: "Will my account get banned for buying Instagram followers?",
+    answer:
+      "No. Our delivery methods are designed to be safe and comply with Instagram's standards.",
+  },
+  {
+    question:
+      "Can buying Instagram followers help me get featured on the Explore page?",
+    answer:
+      "Having more followers may increase visibility, but appearing on the Explore page depends on content quality and engagement.",
+  },
+  {
+    question:
+      "How do Instagram followers from Eagle Likes help with brand growth?",
+    answer:
+      "More followers improve credibility and can help businesses and creators build stronger online authority.",
+  },
+];
+
+export default function FAQ() {
   return (
-    <section className="bg-background py-24 sm:py-32 font-open-sans" id="faq">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-center font-inter mb-12">
-            Frequently Asked Questions
-          </h2>
-          <dl className="mt-10 space-y-8 divide-y divide-border">
+    <section className="bg-black py-20 lg:py-32">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <SectionTitle
+            title="Frequently Asked Questions"
+            subtitle="Have questions? We've got answers. Here are some of the most common queries about our Instagram Followers."
+          />
+
+          <Accordion
+            type="single"
+            collapsible
+            className="mt-14 space-y-4"
+          >
             {faqs.map((faq, index) => (
-              <div key={index} className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
-                <dt className="text-base font-semibold leading-7 text-foreground lg:col-span-5 font-inter">
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="rounded-2xl border border-white/10 bg-[#0B0B0D] px-6"
+              >
+                <AccordionTrigger className="py-6 text-left text-xl font-semibold text-white hover:no-underline">
                   {faq.question}
-                </dt>
-                <dd className="mt-4 lg:col-span-7 lg:mt-0">
-                  <p className="text-base leading-7 text-muted-foreground font-open-sans">
-                    {faq.answer}
-                  </p>
-                </dd>
-              </div>
+                </AccordionTrigger>
+
+                <AccordionContent className="pb-6 text-base leading-8 text-[#99A1AF]">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </dl>
+          </Accordion>
         </div>
       </div>
     </section>
