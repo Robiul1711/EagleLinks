@@ -110,10 +110,10 @@ const PriceCard = () => {
             <div
               className={`px-3 pt-4 flex justify-between items-center gap-3 ${tier.headerBg}`}
             >
-              <h3 className="text-white text-xl  font-bold leading-tight ">
+              <h3 className="text-white text-base  sm:text-lg md:text-xl  font-bold leading-tight ">
                 {tier.title}
               </h3>
-              <div className="w-14 h-14 relative flex items-center justify-center">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 relative flex items-center justify-center">
                 <Image
                   src={tier.image}
                   alt={tier.title}
@@ -123,13 +123,13 @@ const PriceCard = () => {
             </div>
 
             {/* Features content section */}
-            <div className="p-4 flex-1 flex flex-col justify-between gap-8">
-              <ul className="space-y-4 w-full flex flex-col items-start">
+            <div className="sm:p-4 p-2 flex-1 flex flex-col justify-between gap-8">
+              <ul className="sm:space-y-4 space-y-2 w-full flex flex-col items-start">
                 {tier.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3 w-full">
                     {/* Checkmark Icon alignment fix */}
                     <svg
-                      className={`w-5 h-5 mt-0.5 flex-shrink-0 ${tier.checkColor}`}
+                      className={`w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0 ${tier.checkColor}`}
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="3.5"
@@ -142,7 +142,7 @@ const PriceCard = () => {
                       />
                     </svg>
 
-                    <div className="text-sm  text-Secondary">
+                    <div className="sm:text-sm text-xs text-Secondary">
                       <p
                         className={`
                         ${feature.isBold ? "text-white " : ""}

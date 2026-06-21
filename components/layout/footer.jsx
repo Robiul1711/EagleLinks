@@ -62,11 +62,14 @@ const accountLinks = [
 export default function Footer() {
   return (
     <footer
-      style={{ backgroundColor: "#0a0a0a", fontFamily: "'Open Sans', sans-serif" }}
+      style={{
+        backgroundColor: "#0a0a0a",
+        fontFamily: "'Open Sans', sans-serif",
+      }}
     >
-      {/* Top nav row */}
+      {/* Top Nav */}
       <div className="border-b border-white/10">
-        <div className="mx-auto section-padding-x py-6 flex flex-wrap gap-x-8 gap-y-3">
+        <div className="mx-auto section-padding-x py-6 flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-3">
           {topLinks.map((link) => (
             <Link
               key={link.label}
@@ -80,11 +83,10 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Main grid */}
-      <div className="mx-auto section-padding-x py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-x-6 gap-y-10">
-
-          {/* Instagram / TikTok / YouTube Services */}
+      {/* Main Content */}
+      <div className="mx-auto section-padding-x py-6 md:py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-x-8 gap-y-10">
+                    {/* Instagram / TikTok / YouTube Services */}
           {serviceColumns.map((col) => (
             <div key={col.heading}>
               <h3
@@ -93,7 +95,8 @@ export default function Footer() {
               >
                 {col.heading}
               </h3>
-              <ul className="space-y-2.5">
+
+              <ul className="space-y-2">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link
@@ -108,33 +111,37 @@ export default function Footer() {
             </div>
           ))}
 
-          {/* Tools & Resources – spans 2 columns internally */}
-          <div className="sm:col-span-2 lg:col-span-2">
+          {/* Tools & Resources */}
+          <div className="md:col-span-2 xl:col-span-2">
             <h3
               className="text-white font-bold text-[15px] mb-4 leading-snug"
               style={{ fontFamily: "'Rethink Sans', sans-serif" }}
             >
               Tools &amp; Resources
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5">
-              <ul className="space-y-2.5">
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-2">
+              {/* Left */}
+              <ul className="space-y-2">
                 {toolsLeft.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 text-[13px] hover:text-white transition-colors duration-200 leading-snug whitespace-nowrap"
+                      className="text-gray-400 text-[13px] hover:text-white transition-colors duration-200 leading-snug break-words"
                     >
                       {link.label}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <ul className="space-y-2.5">
+
+              {/* Right */}
+              <ul className="space-y-2">
                 {toolsRight.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 text-[13px] hover:text-white transition-colors duration-200 leading-snug whitespace-nowrap"
+                      className="text-gray-400 text-[13px] hover:text-white transition-colors duration-200 leading-snug break-words"
                     >
                       {link.label}
                     </Link>
@@ -152,7 +159,8 @@ export default function Footer() {
             >
               My Account
             </h3>
-            <ul className="space-y-2.5">
+
+            <ul className="space-y-2">
               {accountLinks.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -166,8 +174,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Language selector */}
+                {/* Language Selector */}
         <div className="mt-10">
           <button className="flex items-center gap-2 text-gray-300 text-[14px] hover:text-white transition-colors duration-200 border border-white/20 rounded-md px-3 py-1.5 hover:border-white/40">
             <svg
@@ -185,7 +192,16 @@ export default function Footer() {
               <line x1="2" y1="12" x2="22" y2="12" />
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg>
-            <span style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}>EN</span>
+
+            <span
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 500,
+              }}
+            >
+              EN
+            </span>
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="12"
@@ -202,17 +218,19 @@ export default function Footer() {
           </button>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-white/10 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Bottom */}
+        <div className="border-t border-white/10 mt-8 pt-6 flex flex-col lg:flex-row items-center justify-between gap-6">
+          {/* Copyright */}
           <p
-            className="text-gray-400 text-[13px]"
+            className="text-gray-400 text-[13px] text-center lg:text-left"
             style={{ fontFamily: "'Open Sans', sans-serif" }}
           >
-            Copyright © {new Date().getFullYear()} Eagle Likes, All Rights Reserved.
+            Copyright © {new Date().getFullYear()} Eagle Likes, All Rights
+            Reserved.
           </p>
 
-          {/* Payment icons */}
-          <div className="flex items-center gap-2">
+          {/* Payment Icons */}
+          <div className="flex flex-wrap justify-center gap-2">
             {/* Visa */}
             <div className="bg-white rounded px-2 py-1 flex items-center justify-center h-7 min-w-[44px]">
               <span
@@ -222,6 +240,7 @@ export default function Footer() {
                 VISA
               </span>
             </div>
+
             {/* Mastercard */}
             <div className="bg-white rounded px-2 py-1 flex items-center justify-center h-7 min-w-[44px]">
               <span className="flex items-center gap-0.5">
@@ -229,7 +248,8 @@ export default function Footer() {
                 <span className="w-4 h-4 rounded-full bg-[#F79E1B] block opacity-90 -ml-2" />
               </span>
             </div>
-            {/* Amex */}
+
+            {/* American Express */}
             <div className="bg-[#007BC1] rounded px-2 py-1 flex items-center justify-center h-7 min-w-[44px]">
               <span
                 className="text-white font-black text-[9px] tracking-tight"
@@ -238,6 +258,7 @@ export default function Footer() {
                 AMEX
               </span>
             </div>
+
             {/* Apple Pay */}
             <div className="bg-white rounded px-2 py-1 flex items-center justify-center h-7 min-w-[52px]">
               <span

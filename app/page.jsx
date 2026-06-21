@@ -36,7 +36,7 @@ export default function Home() {
       </div> */}
 
       {/* Content */}
-      <div className="relative z-20">
+      <div className="relative z-20    ">
         <Banner />
         <PackageCard />
         <Brand />

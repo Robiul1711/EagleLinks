@@ -29,8 +29,7 @@ const SectionTitle = ({
       <h2
         className={`
           text-white font-bold capitalize
-          text-2xl
-          xs:text-[28px]
+         text-[28px]
           sm:text-[32px]
           md:text-[40px]
           lg:text-[44px]

@@ -71,7 +71,7 @@ export default function FAQ() {
                   className="
                     py-4 md:py-5 xl:py-6
                     text-left
-                    text-base sm:text-lg lg:text-xl
+                   text-sm sm:text-base md:text-lg lg:text-xl
                     font-semibold
                     text-white
                     hover:no-underline
@@ -83,8 +83,8 @@ export default function FAQ() {
                 <AccordionContent
                   className="
                     pb-4 md:pb-6
-                    text-sm sm:text-base
-                    leading-7 md:leading-8
+                   text-xs sm:text-sm md:text-base
+                    leading-5 md:leading-6
                     text-[#99A1AF]
                   "
                 >
@@ -97,4 +97,4 @@ export default function FAQ() {
       </div>
     </section>
   );
-}
+} 

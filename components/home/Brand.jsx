@@ -14,27 +14,37 @@ const brands = [b1, b2, b3, b4, b5, b6];
 
 const Brand = () => {
   return (
-    <section className="bg-black py-16 overflow-hidden">
-      <div className="container mx-auto px-4">
-        <h3 className="text-center text-Secondary text-xl mb-10">
+    <section className="bg-black overflow-hidden ">
+      <div className="container mx-auto px-4 sm:px-6">
+        <h3 className="mb-6 sm:mb-8 xl:mb-10 text-center text-sm sm:text-base md:text-lg xl:text-xl text-Secondary">
           Eagle Likes is seen on...
         </h3>
 
         <Marquee
           speed={50}
           gradient={false}
-          pauseOnHover={true}
+          pauseOnHover
           autoFill
         >
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="mx-10 flex items-center justify-center"
+              className="mx-5 sm:mx-8 md:mx-10 flex items-center justify-center"
             >
               <Image
                 src={brand}
                 alt={`brand-${index}`}
-                className="h-10 w-auto object-contain opacity-90 hover:opacity-100 transition"
+                className="
+                  h-6
+                  sm:h-8
+                  md:h-9
+                  xl:h-10
+                  w-auto
+                  object-contain
+                  opacity-90
+                  transition
+                  hover:opacity-100
+                "
               />
             </div>
           ))}

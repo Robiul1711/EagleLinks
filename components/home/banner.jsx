@@ -15,7 +15,7 @@ const Banner = () => {
   // const actionKeywords = ["deploying products", "Fast Delivery!"];
 
   return (
-    <section className="relative w-full  flex items-center justify-center  overflow-hidden">
+    <section className="relative w-full  flex items-center justify-center  overflow-hidden px-4">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
         {/* Floating Particles - Fixed logic */}
@@ -70,7 +70,7 @@ const Banner = () => {
                 />
               </span>
             </div> */}
-            <p className="mt-3 sm:mt-5 text-lg  text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="mt-3 sm:mt-5 text-sm sm:text-base md:text-lg  text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
               Quickly get premium Instagram followers safely and easily! Boost
               your IG influence and engagement instantly! Always great prices
               and offers!

@@ -7,17 +7,17 @@ const BackgroundShapes = () => {
     <div className="absolute inset-0 -z-10 pointer-events-none">
       {/* Light Balls */}
       <div
-        className="absolute left-[-490px] top-[-100px] w-[979px] h-[979px] bg-no-repeat"
+        className="absolute left-[-490px] top-[-100px] w-[979px] h-[979px] bg-no-repeat hidden md:block"
         style={{ backgroundImage: "url('/images/lightball.png')" }}
       />
 
       <div
-        className="absolute right-[-490px] top-[-10px] w-[979px] h-[979px] bg-no-repeat"
+        className="absolute right-[-490px] top-[-10px] w-[979px] h-[979px] bg-no-repeat hidden md:block"
         style={{ backgroundImage: "url('/images/lightball.png')" }}
       />
 
       <div
-        className="absolute left-1/2 top-[-490px] w-[979px] h-[979px] -translate-x-1/2 bg-no-repeat"
+        className="absolute left-1/2 top-[-600px] md:top-[-490px] w-[979px] h-[979px] -translate-x-1/2 bg-no-repeat "
         style={{ backgroundImage: "url('/images/lightball.png')" }}
       />
 
