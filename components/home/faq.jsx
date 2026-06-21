@@ -43,9 +43,9 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="bg-black py-20 lg:py-32">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+    <section className="section-padding-x py-12 md:py-16 xl:py-20">
+      <div className="container mx-auto ">
+        <div className="mx-auto max-w-4xl">
           <SectionTitle
             title="Frequently Asked Questions"
             subtitle="Have questions? We've got answers. Here are some of the most common queries about our Instagram Followers."
@@ -54,19 +54,40 @@ export default function FAQ() {
           <Accordion
             type="single"
             collapsible
-            className="mt-14 space-y-4"
+            className="mt-8 md:mt-10 xl:mt-14 space-y-3 md:space-y-4"
           >
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="rounded-2xl border border-white/10 bg-[#0B0B0D] px-6"
+                className="
+                  rounded-xl md:rounded-2xl
+                  border border-white/10
+                  bg-[#0B0B0D]
+                  px-4 md:px-6
+                "
               >
-                <AccordionTrigger className="py-6 text-left text-xl font-semibold text-white hover:no-underline">
+                <AccordionTrigger
+                  className="
+                    py-4 md:py-5 xl:py-6
+                    text-left
+                    text-base sm:text-lg lg:text-xl
+                    font-semibold
+                    text-white
+                    hover:no-underline
+                  "
+                >
                   {faq.question}
                 </AccordionTrigger>
 
-                <AccordionContent className="pb-6 text-base leading-8 text-[#99A1AF]">
+                <AccordionContent
+                  className="
+                    pb-4 md:pb-6
+                    text-sm sm:text-base
+                    leading-7 md:leading-8
+                    text-[#99A1AF]
+                  "
+                >
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

@@ -1,6 +1,6 @@
-"use client";
+// "use client";
 import React from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 const BackgroundShapes = () => {
   return (
@@ -22,32 +22,32 @@ const BackgroundShapes = () => {
       />
 
       {/* Side Shapes with motion */}
-      <motion.div
+      <div
         className="absolute right-0 top-20 h-full w-[10%] bg-no-repeat"
         style={{ backgroundImage: "url('/images/right.png')" }}
-        animate={{
-          y: [0, 25, -25, 0],
-          x: [0, -8, 8, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        // animate={{
+        //   y: [0, 25, -25, 0],
+        //   x: [0, -8, 8, 0],
+        // }}
+        // transition={{
+        //   duration: 10,
+        //   repeat: Infinity,
+        //   ease: "easeInOut",
+        // }}
       />
 
-      <motion.div
+      <div
         className="absolute left-0 top-90 h-full w-[10%] bg-no-repeat"
         style={{ backgroundImage: "url('/images/left.png')" }}
-        animate={{
-          y: [0, -30, 30, 0],
-          x: [0, 8, -8, 0],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        // animate={{
+        //   y: [0, -30, 30, 0],
+        //   x: [0, 8, -8, 0],
+        // }}
+        // transition={{
+        //   duration: 12,
+        //   repeat: Infinity,
+        //   ease: "easeInOut",
+        // }}
       />
     </div>
   );

@@ -3,6 +3,7 @@ import {
   UserRoundPlus,
   Lock,
 } from "lucide-react";
+import SectionTitle from "../common/SectionTitle";
 
 const steps = [
   {
@@ -42,16 +43,10 @@ const HowItWorks = () => {
 
       <div className="container mx-auto px-4">
         {/* Heading */}
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-bold text-white md:text-6xl">
-            How it works
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-[#99A1AF]">
-            Ordering services is simple — pick your package, pay quickly,
-            and watch your growth begin instantly
-          </p>
-        </div>
+      <SectionTitle
+          title="How it works"
+          subtitle="Ordering services is simple — pick your package, pay quickly, and watch your growth begin instantly"
+        />
 
         {/* Cards */}
         <div className="mt-16 grid gap-6 lg:grid-cols-3">

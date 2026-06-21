@@ -1,10 +1,10 @@
 import Image from "next/image";
 import SectionTitle from "../common/SectionTitle";
-import whub from "@/public/images/whybuy.png"
-import whub2 from "@/public/images/boost.png"
+import whub from "@/public/images/whybuy.png";
+import whub2 from "@/public/images/boost.png";
 const WhyImportant = () => {
   return (
-    <section className="relative overflow-hidden bg-black ">
+    <section className="relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute left-0 bottom-0 h-[300px] w-[300px] bg-blue-500/10 blur-[150px]" />
       <div className="absolute right-0 top-0 h-full w-[300px] bg-blue-500/10 blur-[150px]" />
@@ -15,33 +15,30 @@ const WhyImportant = () => {
           gradientText="Instagram Followers Important?"
           subtitle="The followers are important because they represent your audience, your credibility, and your influence. A larger, more engaged following equates to reaching more people, building trust, and creating real opportunities for growth and brand success."
           subtitleClassName="max-w-[780px]"
+          gradientType="instagram"
         />
 
         <div className="space-y-16">
           {/* First Row */}
-          <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div className="grid items-center gap-10 lg:grid-cols-2 mt-16">
             {/* Content */}
-            <div className="max-w-2xl">
-              <h2 className="text-4xl lg:text-[56px] font-bold leading-tight text-white">
-                Why Buy <br />
-                Instagram Followers?
-              </h2>
-
-              <div className="mt-8 space-y-6 text-lg leading-9 text-[#99A1AF]">
-                <p>
-                  Buying Instagram followers can help you grow faster and
+            <div className="max-w-2xl ">
+              <SectionTitle
+                title="Why Buy Instagram Followers?"
+                subtitle={<>
+                Buying Instagram followers can help you grow faster and
                   establish instant credibility in a competitive space. A
                   larger follower count makes your profile look trustworthy,
                   attracts real engagement, and increases your chances of being
-                  discovered by new audiences.
-                </p>
-
-                <p>
+                  discovered by new audiences.  
+                  <br />
+                  <br />
                   Whether you're a brand, influencer, or creator, more
                   followers can boost visibility, strengthen your reputation,
                   and open doors to new opportunities and collaborations.
-                </p>
-              </div>
+                </>}
+                align="start"
+              />
             </div>
 
             {/* Image */}
@@ -71,25 +68,22 @@ const WhyImportant = () => {
 
             {/* Content */}
             <div className="order-1 max-w-2xl lg:order-2">
-              <h2 className="text-4xl lg:text-[56px] font-bold leading-tight text-white">
-                Boost Organic <br />
-                Growth
-              </h2>
-
-              <div className="mt-8 space-y-6 text-lg leading-9 text-[#99A1AF]">
-                <p>
-                  Boost your organic growth on Instagram by buying followers
+                      <SectionTitle
+                title="    Boost Organic Growth"
+                subtitle={<>
+                          Boost your organic growth on Instagram by buying followers
                   from Eagle Likes. Our high-quality, real followers help
-                  increase your visibility and attract genuine engagement.
-                  With a stronger follower base, your content reaches more
-                  people naturally, enhancing credibility and trust.
-                </p>
-
-                <p>
-                  Eagle Likes makes it easy to kickstart your growth and build
+                  increase your visibility and attract genuine engagement. With
+                  a stronger follower base, your content reaches more people
+                  naturally, enhancing credibility and trust.
+                  <br />
+                  <br />
+         Eagle Likes makes it easy to kickstart your growth and build
                   lasting success on Instagram—safely, quickly, and effectively.
-                </p>
-              </div>
+                </>}
+                align="start"
+              />
+
             </div>
           </div>
         </div>

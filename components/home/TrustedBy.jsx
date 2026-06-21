@@ -1,6 +1,7 @@
 import Image from "next/image";
 import trusted from "@/public/images/trustedby.png"
 import { RealSVG, FastSVG, SafetySVG } from "../svg/AllSVG";
+import SectionTitle from "../common/SectionTitle";
 
 const features = [
   {
@@ -31,25 +32,20 @@ const TrustedBy = () => {
           {/* Left Side */}
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-5 py-2 text-sm text-gray-300">
+            <div className="inline-flex items-center gap-2 mb-5 rounded-full border border-purple-500/30 bg-purple-500/10 px-5 py-2 text-sm text-gray-300">
               <span>↗</span>
               Trusted by 100K+ creators
             </div>
 
             {/* Heading */}
-            <h1 className="mt-6 text-5xl font-bold leading-tight text-white">
-              Get Thousands of
-              <br />
-              <span className="bg-[linear-gradient(90deg,#C27AFF_0%,#FB64B6_50%,#51A2FF_100%)] bg-clip-text text-transparent">
-                Active Followers
-              </span>
-            </h1>
-
-            {/* Description */}
-            <p className="mt-6 max-w-md text-lg leading-8 text-[#99A1AF]">
-              Grow your social media presence organically with real, engaged
-              followers. Watch your influence expand across all platforms.
-            </p>
+           <SectionTitle
+          title="Get Thousands of"
+          gradientText="Active Followers"
+          subtitle="Grow your social media presence organically with real, engaged followers. Watch your influence expand across all platforms."
+          subtitleClassName="max-w-[780px]"
+          gradientType="purple"
+          align="start"
+        />
 
             {/* Feature Cards */}
             <div className="mt-10 flex flex-wrap gap-4">

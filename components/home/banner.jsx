@@ -4,21 +4,22 @@ import { motion } from "framer-motion";
 import { FlipWords } from "@/components/ui/flipwords";
 
 import PriceCard from "./PriceCard";
+import SectionTitle from "../common/SectionTitle";
 const Banner = () => {
-  const [mounted, setMounted] = useState(false);
+  // const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
-  const actionKeywords = ["deploying products", "Fast Delivery!"];
+  // const actionKeywords = ["deploying products", "Fast Delivery!"];
 
   return (
     <section className="relative w-full  flex items-center justify-center  overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
         {/* Floating Particles - Fixed logic */}
-        {mounted &&
+        {/* {mounted &&
           [...Array(20)].map((_, i) => (
             <motion.div
               key={i}
@@ -39,21 +40,27 @@ const Banner = () => {
                 ease: "linear",
               }}
             />
-          ))}
+          ))} */}
       </div>
       <div className="">
         <div
           style={{ backgroundImage: "url('/images/grid.png')" }}
-          className="text-center max-w-4xl mx-auto py-16 mt-20"
+          className="text-center max-w-2xl mx-auto py-8 xl:py-16 xl:mt-34 mt-12"
         >
           {/* Dynamic Text Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="2xl:mb-8 mb-4"
+          <div
+            // initial={{ opacity: 0, y: 20 }}
+            // animate={{ opacity: 1, y: 0 }}
+            // transition={{ duration: 0.7, delay: 0.2 }}
+            className="mb-4"
           >
-            <div className="text-3xl sm:text-4xl md:text-5xl 2xl:text-[54px] font-bold leading-tight text-white">
+            <SectionTitle
+              title="Buy Instagram Followers with"
+              gradientText="Fast Delivery!"
+              gradientType="blue"
+              className="text-2xl xs:text-[28px] sm:text-[32px] md:text-[40px] lg:text-[44px] xl:text-[54px]"
+            />
+            {/* <div className="text-3xl sm:text-4xl md:text-5xl 2xl:text-[54px] font-bold leading-tight text-white">
               <span>Buy Instagram Followers with </span>
               <span className="">
                 <FlipWords
@@ -62,13 +69,13 @@ const Banner = () => {
                   className="font-bold text-Primary"
                 />
               </span>
-            </div>
+            </div> */}
             <p className="mt-3 sm:mt-5 text-lg  text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
               Quickly get premium Instagram followers safely and easily! Boost
               your IG influence and engagement instantly! Always great prices
               and offers!
             </p>
-          </motion.div>
+          </div>
         </div>
         <div>
           <PriceCard />

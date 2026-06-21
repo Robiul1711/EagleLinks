@@ -20,48 +20,29 @@ const packages = [
 ];
 
 const followers = [
-  {
-    image: "/images/u1.png",
-    text: "started following you.",
-    time: "10m",
-  },
-  {
-    image: "/images/u2.png",
-    text: "started following you.",
-    time: "15m",
-  },
-  {
-    image: "/images/u3.png",
-    text: "started following you.",
-    time: "20m",
-  },
-  {
-    image: "/images/u4.png",
-    text: "started following you.",
-    time: "30m",
-  },
-  {
-    image: "/images/u5.png",
-    text: "started following you.",
-    time: "50m",
-  },
-  {
-    image: "/images/u6.png",
-    text: "started following you.",
-    time: "55m",
-  },
+  { image: "/images/u1.png", text: "started following you.", time: "10m" },
+  { image: "/images/u2.png", text: "started following you.", time: "15m" },
+  { image: "/images/u3.png", text: "started following you.", time: "20m" },
+  { image: "/images/u4.png", text: "started following you.", time: "30m" },
+  { image: "/images/u5.png", text: "started following you.", time: "50m" },
+  { image: "/images/u6.png", text: "started following you.", time: "55m" },
+  { image: "/images/u1.png", text: "started following you.", time: "1h" },
+  { image: "/images/u2.png", text: "started following you.", time: "1h 10m" },
+  { image: "/images/u3.png", text: "started following you.", time: "1h 30m" },
+  { image: "/images/u4.png", text: "started following you.", time: "2h" },
+  { image: "/images/u5.png", text: "started following you.", time: "2h 20m" },
+  { image: "/images/u6.png", text: "started following you.", time: "3h" },
 ];
-
 export default function PackageCard() {
   const [selected, setSelected] = useState(0);
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto max-w-5xl px-4">
-        {/* Package Grid */}
-        <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
-          {packages.map((item, index) => (
-            <button
+    <section className="py-8 sm:py-12 md:py-16">
+      <div className="max-w-3xl mx-auto">
+      {/* Package Grid */}
+      <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+        {packages.map((item, index) => (
+          <button
               key={index}
               onClick={() => setSelected(index)}
               className={`overflow-hidden rounded-[30px] border transition-all duration-300 ${
@@ -92,10 +73,10 @@ export default function PackageCard() {
         </div>
 
         {/* Price + Button */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-8 lg:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-8 lg:flex-row">
           <div>
             <div className="flex items-start">
-              <h2 className="text-6xl font-bold text-white">
+              <h2 className="text-5xl font-bold text-white">
                 $2.97
               </h2>
 
@@ -105,7 +86,7 @@ export default function PackageCard() {
             </div>
 
             <div className="mt-3 flex items-center gap-3">
-              <p className="text-2xl text-white">
+              <p className="text-xl text-white">
                 you're saving
               </p>
 
@@ -113,13 +94,13 @@ export default function PackageCard() {
                 <FaUser className="text-[#00B7FF]" />
               </div>
 
-              <span className="text-2xl font-semibold text-[#00B7FF]">
+              <span className="text-xl font-semibold text-[#00B7FF]">
                 $0.65
               </span>
             </div>
           </div>
 
-          <button className="h-20 w-full max-w-[380px] rounded-3xl bg-gradient-to-r from-[#0D7FFF] to-[#1BB1FF] text-3xl font-bold text-white shadow-[0_0_25px_rgba(13,127,255,.5)]">
+          <button className="h-16 w-full max-w-[360px] rounded-xl bg-gradient-to-r from-[#0D7FFF] to-[#1BB1FF] text-2xl font-bold text-white shadow-[0_0_25px_rgba(13,127,255,.5)]">
             Buy Now
           </button>
         </div>
@@ -166,18 +147,21 @@ export default function PackageCard() {
           </div>
 
           <div className="text-center lg:text-left">
-            <p className="text-4xl text-white">
+            <p className="text-3xl text-white">
               38,571 people
             </p>
 
-            <p className="text-4xl text-[#00B7FF]">
+            <p className="text-2xl text-[#00B7FF]">
               purchased 2+ times
             </p>
           </div>
         </div>
 
+      </div>
+
+<div className="max-w-5xl mx-auto">
         {/* Features */}
-        <div className="mt-12 flex flex-col gap-5 rounded-full border border-white/10 bg-white/5 px-8 py-6 md:flex-row md:justify-around">
+        <div className="mt-10 flex flex-col gap-5 rounded-full border border-white/10 bg-white/5 px-8 py-5 md:flex-row md:justify-between">
           {["Fast Checkout", "100% Guarantee", "24/7 Support"].map(
             (item) => (
               <div
@@ -188,7 +172,7 @@ export default function PackageCard() {
                   <FaCheck className="text-white" />
                 </div>
 
-                <span className="text-xl text-white">
+                <span className=" text-white">
                   {item}
                 </span>
               </div>
@@ -197,68 +181,84 @@ export default function PackageCard() {
         </div>
 
         {/* Followers Preview */}
-        <div className="mt-14 rounded-[35px] border border-white/10 bg-white/5 p-7">
-          <div className="flex items-center justify-between border-b border-white/10 pb-6">
-            <div className="flex items-center gap-3">
-              <FaUser className="text-2xl text-[#00B7FF]" />
+    <div className="mt-10 rounded-[35px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-5">
+  {/* Header */}
+  <div className="flex items-center justify-between border-b border-white/10 pb-6">
+    <div className="flex items-center gap-3">
+      <FaUser className="text-2xl text-[#00B7FF]" />
 
-              <h3 className="text-3xl font-bold text-white">
-                Followers Preview
-              </h3>
-            </div>
+      <h3 className="text-2xl font-bold text-white">
+        Followers Preview
+      </h3>
+    </div>
 
-            <div className="rounded-full bg-white/10 px-5 py-3 text-[#00B7FF]">
-              ★ Real Followers
-            </div>
+    <div className="rounded-full bg-white/10 backdrop-blur-xl px-5 py-3 text-[#00B7FF]">
+      ★ Real Followers
+    </div>
+  </div>
+
+  {/* Scroll Area */}
+  <div className="mt-5 overflow-x-auto pb-4 scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-white/50">
+    <div className="grid grid-flow-col grid-rows-3 gap-4 min-w-[1100px]">
+      {followers.map((item, index) => (
+        <div
+          key={index}
+          className="
+            flex items-center justify-between
+            rounded-3xl
+            border border-white/10
+            bg-white/[0.03]
+            backdrop-blur-xl
+            px-3 py-2
+            min-w-[320px]
+          "
+        >
+          <div className="flex items-center gap-4">
+            <Image
+              src={item.image}
+              alt=""
+              width={50}
+              height={50}
+              className="rounded-full"
+            />
+
+            <p className="text-white">
+              started following you.
+            </p>
           </div>
 
-          <div className="mt-7 grid gap-5 md:grid-cols-2">
-            {followers.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-4"
-              >
-                <div className="flex items-center gap-4">
-                  <Image
-                    src={item.image}
-                    alt=""
-                    width={45}
-                    height={45}
-                    className="rounded-full"
-                  />
-
-                  <p className="text-lg text-white">
-                    {item.text}
-                  </p>
-                </div>
-
-                <span className="text-gray-400">
-                  {item.time}
-                </span>
-              </div>
-            ))}
-          </div>
+          <span className="text-Secondary">
+            {item.time}
+          </span>
         </div>
-
+      ))}
+    </div>
+  </div>
+</div>
         {/* Bottom */}
-        <div className="mt-14 text-center">
-          <div className="flex justify-center gap-1 text-[#0D7FFF]">
+        <div className="mt-10 text-center">
+          <div className="flex items-center justify-center gap-5">
+
+          <div className="flex justify-center items-center gap-1 text-[#0D7FFF]">
             <FaStar />
             <FaStar />
             <FaStar />
             <FaStar />
             <FaStar />
           </div>
-
-          <p className="mt-4 text-2xl text-white">
+          <p className=" text-white">
             8000+ Verified Customer Reviews
           </p>
+          </div>
 
-          <p className="mt-4 text-xl text-gray-400">
+
+          <p className="mt-4 text-gray-400">
             5 million individual users and counting
           </p>
         </div>
-      </div>
+     
+
+</div>
     </section>
   );
 }

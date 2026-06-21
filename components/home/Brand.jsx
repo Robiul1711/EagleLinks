@@ -16,7 +16,7 @@ const Brand = () => {
   return (
     <section className="bg-black py-16 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h3 className="text-center text-[#99A1AF] text-xl mb-10">
+        <h3 className="text-center text-Secondary text-xl mb-10">
           Eagle Likes is seen on...
         </h3>
 
