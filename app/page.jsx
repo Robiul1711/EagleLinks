@@ -13,6 +13,7 @@ import PackageCard from "../components/home/PackageCard";
 import BackgroundShapes from "@/components/home/BackgroundShapes";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 
+
 export default function Home() {
   return (
     <main className="relative overflow-hidden w-full">
