@@ -1,63 +1,55 @@
 import React from "react";
 import Image from "next/image";
-import {
-  Users,
-  Tag,
-  HelpCircle,
-  CreditCard,
-  Zap,
-  LogIn,
-  Briefcase,
-  ShieldCheck,
-} from "lucide-react";
+
 import SectionTitle from "../common/SectionTitle";
+import { RealFollowersSVG, PricingSVG, SupportSVG, PaymentSVG, DeliverySVG, LoginSVG, ExprienceSVG, SaftySVG } from "../svg/AllSVG";
 
 const comparisonData = [
   {
     feature: "Real Followers",
-    icon: Users,
+    icon: RealFollowersSVG,
     eagle: "Always Real",
     others: "Often Bots",
   },
   {
     feature: "Pricing",
-    icon: Tag,
+    icon: PricingSVG,
     eagle: "Transparent",
     others: "Hidden Fees",
   },
   {
     feature: "Support",
-    icon: HelpCircle,
+    icon: SupportSVG,
     eagle: "24/7 Support Team",
     others: "Limited Help",
   },
   {
     feature: "Payment Options",
-    icon: CreditCard,
+    icon: PaymentSVG,
     eagle: "All Major Cards",
     others: "Few Options",
   },
   {
     feature: "Delivery Speed",
-    icon: Zap,
+    icon: DeliverySVG,
     eagle: "Lightning Fast",
     others: "Slow & Delayed",
   },
   {
     feature: "Login Info Needed",
-    icon: LogIn,
+    icon: LoginSVG,
     eagle: "Not Required",
     others: "Often Asked",
   },
   {
     feature: "Experience",
-    icon: Briefcase,
+    icon: ExprienceSVG,
     eagle: "10+ Years",
     others: "New/Unproven",
   },
   {
     feature: "Account Safety",
-    icon: ShieldCheck,
+    icon: SaftySVG,
     eagle: "100% Secure",
     others: "Risky / Unsafe",
   },
@@ -224,73 +216,77 @@ const WhyChooseUs = () => {
           </div>
         </div>
                 {/* Mobile / Tablet Layout */}
-        <div className="xmd:hidden grid gap-4 sm:gap-5 sm:grid-cols-2 mt-8 md:mt-12">
-          {comparisonData.map((item, index) => {
-            const Icon = item.icon;
+{/* Mobile / Tablet Layout */}
+<div className="xmd:hidden mt-8 overflow-x-auto">
+  <div className="min-w-[500px] rounded-[24px] border border-white/20 bg-[#0c0d12]/30 backdrop-blur-md overflow-hidden">
 
-            return (
-              <div
-                key={index}
-                className="
-                  rounded-2xl sm:rounded-3xl
-                  border border-white/5
-                  bg-[#0c0d12]/50
-                  p-4 sm:p-6
-                  backdrop-blur-md
-                  flex flex-col justify-between
-                "
-              >
-                {/* Feature Header */}
-                <div className="flex items-center gap-3 mb-4 sm:mb-5 pb-4 border-b border-white/5">
-                  <div className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 text-Secondary">
-                    <Icon size={20} />
-                  </div>
+    {/* Header */}
+    <div className="grid grid-cols-3 border-b border-white/10">
+      <div className="p-3"></div>
 
-                  <h4 className="text-base sm:text-lg font-bold text-white tracking-wide">
-                    {item.feature}
-                  </h4>
-                </div>
+      <div className="flex items-center justify-center p-3 border-x border-white/10 bg-[#090b11]">
+        <Image
+          src="/images/logo.png"
+          alt="Eagle Likes"
+          width={90}
+          height={20}
+          className="object-contain"
+        />
+      </div>
 
-                {/* Comparison */}
-                <div className="flex flex-col gap-3">
+      <div className="flex items-center justify-center p-3">
+        <span className="rounded-full bg-blue-500/10 border border-blue-500/20 px-3 py-1 text-[10px] font-semibold text-blue-400">
+          Others
+        </span>
+      </div>
+    </div>
 
-                  {/* Eagle Likes */}
-                  <div className="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl border border-Primary/20 bg-Primary/5 text-white">
-                    <CheckIcon />
+    {/* Rows */}
+    {comparisonData.map((item, index) => {
+      const Icon = item.icon;
 
-                    <div className="flex flex-col">
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-Primary">
-                        Eagle Likes
-                      </span>
+      return (
+        <div
+          key={index}
+          className={`grid grid-cols-3 items-center ${
+            index !== comparisonData.length - 1
+              ? "border-b border-white/10"
+              : ""
+          }`}
+        >
+          {/* Feature */}
+          <div className="flex items-center gap-2 p-3">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/5">
+              <Icon size={14} className="text-[#99A1AF]" />
+            </div>
 
-                      <span className="text-xs sm:text-sm font-semibold tracking-wide">
-                        {item.eagle}
-                      </span>
-                    </div>
-                  </div>
+            <span className="text-[10px] font-medium text-white">
+              {item.feature}
+            </span>
+          </div>
 
-                  {/* Others */}
-                  <div className="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl border border-white/5 bg-white/[0.02] text-[#99A1AF]">
-                    <div className="flex items-center justify-center w-5 h-5">
-                      <CrossIcon />
-                    </div>
+          {/* Eagle */}
+          <div className="flex items-center gap-2 border-x border-white/10 bg-[#090b11] p-3">
+            <CheckIcon />
 
-                    <div className="flex flex-col">
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-[#99A1AF]/50">
-                        Others
-                      </span>
+            <span className="text-[10px] font-semibold text-white">
+              {item.eagle}
+            </span>
+          </div>
 
-                      <span className="text-xs sm:text-sm font-medium tracking-wide">
-                        {item.others}
-                      </span>
-                    </div>
-                  </div>
+          {/* Others */}
+          <div className="flex items-center gap-2 p-3">
+            <CrossIcon />
 
-                </div>
-              </div>
-            );
-          })}
+            <span className="text-[10px] text-[#99A1AF]">
+              {item.others}
+            </span>
+          </div>
         </div>
+      );
+    })}
+  </div>
+</div>
 
       </div>
     </section>
