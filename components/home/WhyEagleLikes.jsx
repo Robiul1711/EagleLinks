@@ -120,7 +120,7 @@ const WhyEagleLikes = () => {
       {/* Blue Glow */}
       <div className="absolute right-0 top-0 h-full w-[150px] md:w-[220px] xl:w-[300px] bg-blue-500/10 blur-[80px] md:blur-[120px] xl:blur-[150px]" />
 
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto ">
         <SectionTitle
           title="Why"
           gradientText="Eagle Likes?"

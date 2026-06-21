@@ -191,7 +191,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation Track */}
-        <nav className="hidden xl:flex items-center gap-6 mx-4">
+        <nav className="hidden lg:flex items-center gap-6 mx-4">
           {navItems.map((item) => (
             <NavDropdown
               key={item.label}
@@ -203,10 +203,10 @@ export default function Navbar() {
         </nav>
 
         {/* Actions Interface */}
-        <div className="hidden xl:flex items-center flex-shrink-0">
+        <div className="hidden lg:flex items-center flex-shrink-0">
           <Link
             href="#"
-            className="flex items-center gap-2 px-5 py-[7px] rounded-md border border-white/20 text-white text-[13px] font-semibold tracking-wide hover:bg-white/10 transition-all duration-200"
+            className="flex items-center gap-2 px-5 py-[7px] rounded-md border border-Primary/40 text-white text-[13px] font-semibold tracking-wide hover:bg-Primary/30 transition-all duration-200"
           >
             <FaUser size={12} />
             Login
@@ -215,7 +215,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger Drawer Trigger */}
         <button
-          className="xl:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors"
+          className="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >

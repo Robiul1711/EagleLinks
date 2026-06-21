@@ -38,7 +38,7 @@ export default function PackageCard() {
       <div className="max-w-3xl mx-auto ">
 
         {/* Package Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+        <div className="grid grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {packages.map((item, index) => (
             <button
               key={index}
@@ -56,13 +56,13 @@ export default function PackageCard() {
                     : "bg-white/10"
                 }`}
               >
-                <h3 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-white">
+                <h3 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-white">
                   {item.amount}
                 </h3>
               </div>
 
               <div className="bg-[#111111] py-3 sm:py-4 xl:py-5">
-                <p className="text-base sm:text-xl xl:text-2xl text-white">
+                <p className="text-xs sm:text-base md:text-xl xl:text-2xl text-white">
                   {item.discount}
                 </p>
               </div>
@@ -127,11 +127,11 @@ export default function PackageCard() {
           </div>
 
           <div className="text-center lg:text-left">
-            <p className="text-2xl xl:text-3xl text-white">
+            <p className="text-sm sm:text-2xl xl:text-3xl text-white">
               38,571 people
             </p>
 
-            <p className="text-lg xl:text-2xl text-[#00B7FF]">
+            <p className="text-sm xl:text-2xl text-[#00B7FF]">
               purchased 2+ times
             </p>
           </div>

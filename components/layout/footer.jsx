@@ -63,7 +63,7 @@ export default function Footer() {
   return (
     <footer
       style={{
-        backgroundColor: "#0a0a0a",
+      backgroundColor: "#0a0a0a",
         fontFamily: "'Open Sans', sans-serif",
       }}
     >
@@ -85,7 +85,7 @@ export default function Footer() {
 
       {/* Main Content */}
       <div className="mx-auto section-padding-x py-6 md:py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-x-8 gap-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-6 gap-x-8 gap-y-10">
                     {/* Instagram / TikTok / YouTube Services */}
           {serviceColumns.map((col) => (
             <div key={col.heading}>
