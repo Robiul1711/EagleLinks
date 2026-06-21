@@ -3,10 +3,10 @@
 import Image from "next/image";
 import SectionTitle from "../common/SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import "swiper/css";
-import "swiper/css/pagination";
 
 import w1 from "@/public/images/w1.png";
 import w2 from "@/public/images/w2.png";
@@ -131,12 +131,15 @@ const WhyEagleLikes = () => {
         {/* Mobile Swiper */}
         <div className="md:hidden">
           <Swiper
-            modules={[Pagination]}
+            modules={[Navigation]}
             slidesPerView={1.1}
             centeredSlides
             spaceBetween={20}
-            pagination={{ clickable: true }}
-            className="pb-12"
+            navigation={{
+              prevEl: ".why-prev",
+              nextEl: ".why-next",
+            }}
+            className="pb-4"
           >
             {features.map((item, index) => (
               <SwiperSlide key={index}>
@@ -144,6 +147,15 @@ const WhyEagleLikes = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+          {/* Custom Navigation Buttons */}
+          <div className="flex justify-center items-center gap-4 mt-4">
+            <button className="why-prev flex items-center justify-center w-10 h-10 rounded-full bg-[linear-gradient(90deg,#018DFF_48%,#0FF_85%)] text-slate-950 hover:opacity-90 active:scale-95 transition-all disabled:opacity-40">
+              <ChevronLeft size={20} strokeWidth={2.5} />
+            </button>
+            <button className="why-next flex items-center justify-center w-10 h-10 rounded-full bg-[linear-gradient(90deg,#018DFF_48%,#0FF_85%)] text-slate-950 hover:opacity-90 active:scale-95 transition-all disabled:opacity-40">
+              <ChevronRight size={20} strokeWidth={2.5} />
+            </button>
+          </div>
         </div>
 
         {/* Desktop Grid */}

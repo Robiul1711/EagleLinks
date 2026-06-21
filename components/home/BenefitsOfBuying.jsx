@@ -7,10 +7,10 @@ import trust from "@/public/images/trust.png";
 import follower from "@/public/images/follower.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import "swiper/css";
-import "swiper/css/pagination";
 
 const benefits = [
   {
@@ -51,8 +51,11 @@ const BenefitsOfBuying = () => {
         {/* Mobile & Tablet Swiper */}
         <div className="mt-10 md:mt-14 xl:mt-16 lg:hidden">
           <Swiper
-            modules={[Pagination]}
-            pagination={{ clickable: true }}
+            modules={[Navigation]}
+            navigation={{
+              prevEl: ".benefits-prev",
+              nextEl: ".benefits-next",
+            }}
             spaceBetween={20}
             slidesPerView={1.1}
             breakpoints={{
@@ -63,7 +66,7 @@ const BenefitsOfBuying = () => {
                 slidesPerView: 2,
               },
             }}
-            className="pb-14"
+            className="pb-4"
           >
             {benefits.map((item, index) => (
               <SwiperSlide key={index}>
@@ -99,6 +102,15 @@ const BenefitsOfBuying = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+          {/* Custom Navigation Buttons */}
+          <div className="flex justify-center items-center gap-4 mt-4">
+            <button className="benefits-prev flex items-center justify-center w-10 h-10 rounded-full bg-[linear-gradient(90deg,#018DFF_48%,#0FF_85%)] text-slate-950 hover:opacity-90 active:scale-95 transition-all disabled:opacity-40">
+              <ChevronLeft size={20} strokeWidth={2.5} />
+            </button>
+            <button className="benefits-next flex items-center justify-center w-10 h-10 rounded-full bg-[linear-gradient(90deg,#018DFF_48%,#0FF_85%)] text-slate-950 hover:opacity-90 active:scale-95 transition-all disabled:opacity-40">
+              <ChevronRight size={20} strokeWidth={2.5} />
+            </button>
+          </div>
         </div>
                 {/* Desktop Grid */}
         <div className="hidden lg:grid mt-16 gap-8 lg:grid-cols-3">
