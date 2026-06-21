@@ -13,6 +13,8 @@
   --font-rethink-sans: "Rethink Sans", sans-serif;
 
   --color-Primary: #01AAFF;
+  --color-Secondary: #99A1AF;
+
   --color-bg-custom: linear-gradient(90deg, #018DFF 48%, #0FF 85%);
   --color-bg-custom2: linear-gradient(90deg, #A22BDE 0%, #8673FF 100%);
 
@@ -221,3 +223,5 @@ button{
   scrollbar-width: thin;
   scrollbar-color: #01AAFF transparent;
 }
+
+
